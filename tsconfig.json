@@ -19,8 +19,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "./src",
     "paths": {
-      "assests/*": ["/src/assests/*"]
+      "assets/*":["./assets/*"],
     },
     
   },

@@ -1,0 +1,15 @@
+.header {
+    background: rgb(0, 0, 72);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    padding: 10px;
+    .icon-area{
+        display: flex;
+        .icon-area-item {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import './assests/scss/global.scss'
+import 'assets/scss/global.scss'
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
