@@ -6,7 +6,24 @@ import { ReactComponent as PlusIcon } from "assets/icon/plus.svg";
 import { ReactComponent as ShareIcon } from "assets/icon/share.svg";
 import "./filterTable.scss";
 const FilterTable = () => {
-  const [filter, setFilter] = useState(data.title);
+  const [filter, setFilter] = useState([
+    {
+      key: "id",
+      checked: true,
+    },
+    {
+      key: "Kontrat",
+      checked: true,
+    },
+    {
+      key: "Teklif",
+      checked: true,
+    },
+    {
+      key: "Data",
+      checked: true,
+    },
+  ]);
   const [tableData, setTableData] = useState(data);
 
   const contractSet = new Set();
@@ -14,7 +31,6 @@ const FilterTable = () => {
     contractSet.add(item.contract);
   });
 
-  console.log('flter',filter)
   return (
     <>
       <div className="filter-table-head">
@@ -35,9 +51,9 @@ const FilterTable = () => {
           <option value="" disabled selected hidden>
             Kontrat Seçiniz
           </option>
-          {Array.from(contractSet).map((e: any) => {
+          {Array.from(contractSet).map((e: any, index: number) => {
             return (
-              <option value={e} key={e}>
+              <option value={e} key={e + index} defaultValue={e}>
                 {e}
               </option>
             );
@@ -55,24 +71,20 @@ const FilterTable = () => {
             <ul className="dropdown-menu">
               {data.title.map((e) => {
                 return (
-                  <li>
+                  <li key={"check" + e}>
                     <input
                       type="checkbox"
                       id={e}
                       name={e}
                       value={e}
-                      key={e}
                       defaultChecked={true}
                       onChange={(event) => {
-                        const tempFilter = [...filter]
-                        const findElement = filter.some((element) => element === event.target.value)
-                        if(event.target.checked && !findElement) {
-                            tempFilter.push(e)
-                            setFilter(tempFilter)
-                        }
-                        else {
-                            setFilter(filter.filter((filter) => filter !== e))
-                        }
+                        const tempFilter = [...filter];
+                        const findIndex = tempFilter.findIndex(
+                          (element) => element.key === event.target.value
+                        );
+                        tempFilter[findIndex].checked = event.target.checked
+                        setFilter(tempFilter)
                       }}
                     />
                     {e}
