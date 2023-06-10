@@ -1,14 +1,15 @@
 interface IProps {
   data: any;
+  filter: Array<string>;
 }
 
-const Table = ({ data }: IProps) => {
+const Table = ({ data, filter }: IProps) => {
   return (
     <>
       <table>
         <thead>
           <tr>
-            {data?.title.map((e: string) => {
+            {filter.map((e: string) => {
               return <th key={e}>{e}</th>;
             })}
           </tr>
@@ -16,10 +17,10 @@ const Table = ({ data }: IProps) => {
         <tbody>
           {data.data.map((row: any, index: number) => (
             <tr key={index}>
-              <td>{row.id}</td>
-              <td>{row.contract}</td>
-              <td>{row.offer}</td>
-              <td>{row.data}</td>
+              {filter.includes("id") && <td>{row.id}</td>}
+              {filter.includes("Kontrat") && <td>{row.contract}</td>}
+              {filter.includes("Teklif") && <td>{row.offer}</td>}
+              {filter.includes("Data") && <td>{row.data}</td>}
             </tr>
           ))}
         </tbody>

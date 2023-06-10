@@ -1,3 +1,4 @@
+import FilterTable from "components/filterTable";
 import "./App.css";
 import Header from "./components/headers";
 import Table from "./components/table";
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <Table data={data} />
+      <FilterTable />
     </>
   );
 }

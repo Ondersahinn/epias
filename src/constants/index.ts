@@ -9,7 +9,7 @@ export const data = {
     },
     {
       id: 2,
-      contract: "2019",
+      contract: "2018",
       offer: "78125",
       data: "Satış",
     },
