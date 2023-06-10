@@ -1,0 +1,13 @@
+.form-list-container{
+    display: flex;
+    flex-direction: column;
+    ul {
+        border-bottom: 1px solid gainsboro;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        padding-bottom: 15px;
+        li {
+            list-style: none;
+        }
+    }
+}

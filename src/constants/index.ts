@@ -33,3 +33,22 @@ export const data = {
     },
   ],
 };
+
+
+export const formListData = [
+  {
+    key:"ABSADT",
+    value:"2334",
+    data:"Alış"
+  },
+  {
+    key:"DETASD",
+    value:"5476",
+    data:"Satış"
+  },
+  {
+    key:"GFHGBMN",
+    value:"67765",
+    data:"Satış"
+  }
+]
