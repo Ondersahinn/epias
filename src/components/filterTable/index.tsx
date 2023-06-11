@@ -38,6 +38,7 @@ const FilterTable = () => {
           name="head"
           id="head"
           placeholder="Kontrat Seçiniz"
+          defaultValue="default" 
           onChange={(e) => {
             const tempData = { ...data };
             tempData.data = [
@@ -48,12 +49,12 @@ const FilterTable = () => {
             setTableData(tempData);
           }}
         >
-          <option value="" disabled selected hidden>
+          <option value="default" disabled selected hidden>
             Kontrat Seçiniz
           </option>
           {Array.from(contractSet).map((e: any, index: number) => {
             return (
-              <option value={e} key={e + index} defaultValue={e}>
+              <option value={e} key={e + index} id={e}>
                 {e}
               </option>
             );
