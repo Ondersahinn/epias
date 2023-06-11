@@ -17,12 +17,15 @@ const DragSlice = createSlice({
   initialState,
   reducers: {
     handleHorizantalDragChange: (state, action) => {
+      localStorage.setItem('horizantal',JSON.stringify(action.payload))
       state.horizantal = action.payload;
     },
     handleVerticalTopDragChange: (state, action) => {
+      localStorage.setItem('verticelTop',JSON.stringify(action.payload))
       state.verticelTop = action.payload;
     },
     handleVerticalBottomDragChange: (state, action) => {
+      localStorage.setItem('verticelBottom',JSON.stringify(action.payload))
       state.verticelBottom = action.payload;
     },
   },
